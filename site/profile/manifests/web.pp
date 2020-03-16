@@ -1,3 +1,5 @@
 class profile::web {
-  include puppetlabs-apache
+  package {'httpd':
+    ensure => present,
+  }
 }
