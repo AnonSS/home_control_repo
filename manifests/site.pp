@@ -13,4 +13,7 @@ node 'puppetmasterpo.lsst.org' {
     owner => 'root',
   }
 }
+node /^web/ { 
+  include role::app_server
+}
 
