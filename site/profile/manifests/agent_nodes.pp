@@ -1,5 +1,5 @@
 class profile::agent_nodes {
   include dockeragent
-  dockeragent::node { 'webserver1.lsst.org': }
-  dockeragent::node { 'puppetmasterpo.lsst.org': }
+  node { 'webserver1.lsst.org': }
+  node { 'puppetmasterpo.lsst.org': }
 }
