@@ -3,3 +3,7 @@ class profile::web {
     ensure => present,
   }
 }
+  service { 'sshd':
+    ensure => 'running',
+    enable => 'true',
+  }
