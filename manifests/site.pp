@@ -9,7 +9,7 @@ node 'puppetmasterpo.lsst.org' {
   include role::master_server
   file {'/root/README':
     ensure => file,
-    content => “Welcome" to ${fqdn},
+    content => 'Welcome to ${fqdn}',
     owner => 'root',
 }
 node /^web/ {
