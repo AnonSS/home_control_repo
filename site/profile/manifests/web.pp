@@ -7,3 +7,4 @@ class profile::web {
     enable => 'true',
  }
 } 
+
