@@ -31,7 +31,8 @@ yumrepo { 'PHP72-products':
   ensure    => 'present',
   name      => 'Remis PHP 7.2 RPM repository for Enterprise Linux 7 - $basearch',
   descr     => 'remi-php72',
-  baseurl   => 'http://rpms.remirepo.net/enterprise/7/php72/$basearch/',
+  #baseurl   => 'http://rpms.remirepo.net/enterprise/7/php72/$basearch/',
+  mirrorlist => 'http://cdn.remirepo.net/enterprise/7/php72/mirror'
   gpgkey    => 'https://rpms.remirepo.net/RPM-GPG-KEY-remi',
   enabled   => '1',
   gpgcheck  => '1',
