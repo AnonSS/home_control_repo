@@ -27,4 +27,24 @@ yumrepo { 'mariadb-products':
   gpgcheck  => '1',
   target    => '/etc/yum.repos.d/mariadb.repo',
 }
+yumrepo { 'PHP72-products':
+  ensure    => 'present',
+  name      => 'Remis PHP 7.2 RPM repository for Enterprise Linux 7 - $basearch',
+  descr     => 'remi-php72',
+  baseurl   => 'http://rpms.remirepo.net/enterprise/7/php72/$basearch/',
+  gpgkey    => 'https://rpms.remirepo.net/RPM-GPG-KEY-remi',
+  enabled   => '1',
+  gpgcheck  => '1',
+  target    => '/etc/yum.repos.d/php72.repo',
+}
+yumrepo { 'epel-products':
+  ensure    => 'present',
+  name      => 'epel',
+  descr     => 'epel',
+  baseurl   => 'http://download.fedoraproject.org/pub/epel/7/$basearch',
+  gpgkey    => 'https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7',
+  enabled   => '1',
+  gpgcheck  => '1',
+  target    => '/etc/yum.repos.d/epel.repo',
+}
 }
