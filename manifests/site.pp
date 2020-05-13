@@ -17,14 +17,14 @@ node /^web/ {
   include role::app_server
 }
 node 'webserver1.lsst.org' {
-yumrepo { 'puppetrepo-products':
+yumrepo { 'mariadb-products':
   ensure    => 'present',
-  name      => 'puppetrepo-products',
-  descr     => 'Puppet Labs Products El 7 - $basearch',
-  baseurl   => 'http://myownmirror',
+  name      => 'mariadb',
+  descr     => 'MariaDB',
+  baseurl   => 'https://yum.mariadb.org/RPM-GPG-KEY-MariaDB',
   gpgkey    => 'http://myownmirror',
   enabled   => '1',
   gpgcheck  => '1',
-  target    => '/etc/yum.repo.d/puppetlabs.repo',
+  target    => '/etc/yum.repos.d/mariadb.repo',
 }
 }
