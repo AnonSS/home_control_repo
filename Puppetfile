@@ -1,4 +1,4 @@
 mod 'puppetlabs-apache'
 mod 'puppetlabs-stdlib'
 mod 'puppetlabs-concat'
-mod 'yumrepo-core'
+mod 'puppetlabs-yumrepo_core', '1.0.7'
