@@ -29,7 +29,7 @@ yumrepo { 'mariadb-products':
 }
 yumrepo { 'PHP72-products':
   ensure    => 'present',
-  name      => 'Remis PHP 7.2 RPM repository for Enterprise Linux 7 - $basearch',
+  name      => 'remi-php72',
   descr     => 'remi-php72',
   #baseurl   => 'http://rpms.remirepo.net/enterprise/7/php72/$basearch/',
   mirrorlist => 'http://cdn.remirepo.net/enterprise/7/php72/mirror',
