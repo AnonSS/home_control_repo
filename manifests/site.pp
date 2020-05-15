@@ -17,6 +17,7 @@ node /^web/ {
   include role::app_server
 }
 node 'webserver1.lsst.org' {
+  include role::web_server
 yumrepo { 'mariadb-products':
   ensure    => 'present',
   name      => 'mariadb',
