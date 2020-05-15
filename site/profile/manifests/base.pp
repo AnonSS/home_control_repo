@@ -1,5 +1,5 @@
 class profile::base {
-  include profile::web
+ # include profile::web
   user {'admin':
     ensure => present
   }
@@ -15,10 +15,6 @@ class profile::base {
 	}
 
 	package { 'telnet':
-		ensure => installed,
-	}
-
-	package { 'acpid':
 		ensure => installed,
 	}
 
