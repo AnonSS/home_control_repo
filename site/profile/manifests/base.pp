@@ -6,4 +6,35 @@ class profile::base {
   package { 'tcpdump':
 		ensure => installed,
 	}
+  package { 'openssl':
+		ensure => installed,
+	}
+
+	package { 'openssl-devel':
+		ensure => installed,
+	}
+
+	package { 'telnet':
+		ensure => installed,
+	}
+
+	package { 'acpid':
+		ensure => installed,
+	}
+
+	package { 'lvm2':
+		ensure => installed,
+	}
+	
+	package { 'bash-completion':
+		ensure => installed,
+	}
+
+	package { 'tree':
+		ensure => installed,
+	}
+
+	package { 'sudo':
+		ensure => installed,
+	}
 }
