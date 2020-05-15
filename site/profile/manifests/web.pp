@@ -1,4 +1,5 @@
 class profile::web {
+  include profile::base
   package {'httpd':
     ensure => present,
 }
