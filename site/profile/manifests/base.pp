@@ -1,5 +1,5 @@
 class profile::base {
- # include profile::web
+# include profile::web
   user {'admin':
     ensure => present
   }
