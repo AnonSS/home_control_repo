@@ -14,8 +14,8 @@ node 'puppetmasterpo.lsst.org' {
   }
 }
 node /^web/ { 
-  include role::hieradata::app_server
+  include hieradata::site::role::app_server
 }
 node 'webserver1.lsst.org' {
-  include role::web_server
+  include hieradata::site::role::web_server
 }
