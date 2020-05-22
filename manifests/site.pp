@@ -16,7 +16,7 @@ node 'puppetmasterpo.lsst.org' {
 #node /^web/ {
 #  include role::app_server
 #  include role::web_server
-}
+#}
 node 'webserver1.lsst.org' {
   include role::web_server
 }
