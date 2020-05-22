@@ -18,5 +18,5 @@ node 'puppetmasterpo.lsst.org' {
 #  include role::web_server
 #}
 node 'webserver1.lsst.org' {
-  include hieradata::site::role::web_server
+  include role::web_server
 }
