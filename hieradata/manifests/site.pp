@@ -5,7 +5,7 @@ node default {
     owner   => 'root',
   }
 }
-node 'puppetmasterpo.lsst.org' {
+node 'puppetmasterpo' {
   include role::master_server
   file {'/root/README':
     ensure  => file,
