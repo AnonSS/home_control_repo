@@ -19,5 +19,4 @@ node 'puppetmasterpo' {
 #}
 node 'webserver1.lsst.org' {
   include role::web_server
-}node 'yourls2' {
 }
