@@ -1,3 +1,0 @@
-class node::yourls2 {
-  include profile::base
-}
