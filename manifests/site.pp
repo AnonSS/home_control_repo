@@ -19,5 +19,9 @@ node 'puppetmasterpo' {
 #}
 node 'webserver1.lsst.org' {
   include role::web_server
-}node 'yourls2' {
+  file {'/root/README':
+    ensure  => file,
+    content => 'Welcome to webserver1',
+    owner   => 'root',
+  }
 }
