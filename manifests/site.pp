@@ -9,7 +9,7 @@ node 'puppetmasterpo' {
   include role::master_server
   file {'/root/README':
     ensure  => file,
-    content => 'Welcome to puppetmasterpo',
+    content => 'Welcome to puppetmasterpo today',
     owner   => 'root',
   }
 }
