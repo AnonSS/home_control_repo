@@ -6,6 +6,9 @@ class profile::base {
   package { 'tcpdump':
 		ensure => installed,
 	}
+  package { 'vim':
+		ensure => installed,
+	}	
   package { 'openssl':
 		ensure => installed,
 	}
