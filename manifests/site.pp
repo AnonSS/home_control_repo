@@ -25,3 +25,11 @@ node 'webserver1.lsst.org' {
     owner   => 'root',
   }
 }
+node 'yourls2.lsst.org' {
+  include role::yourls2_server
+  file {'/root/README':
+    ensure  => file,
+    content => 'Welcome to yourls2 server',
+    owner   => 'root',
+  }
+}

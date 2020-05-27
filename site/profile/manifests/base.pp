@@ -3,9 +3,15 @@ class profile::base {
   user {'admin':
     ensure => present
   }
+  package { 'git':
+		ensure => installed,
+	}
   package { 'tcpdump':
 		ensure => installed,
 	}
+  package { 'vim':
+		ensure => installed,
+	}	
   package { 'openssl':
 		ensure => installed,
 	}
