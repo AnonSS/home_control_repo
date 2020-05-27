@@ -1,4 +1,4 @@
-class profile::web {
+class profile::web2 {
   package {'httpd':
     ensure => present,
 }
@@ -6,3 +6,4 @@ class profile::web {
     ensure => 'running',
     enable => 'true',
  }
+}
