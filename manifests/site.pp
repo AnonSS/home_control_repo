@@ -26,5 +26,5 @@ node 'webserver1.lsst.org' {
   }
 }
 node 'yourls2.lsst.org' {
-#  include role::yourls2_server
+  include role::yourls2_server
 }
