@@ -25,6 +25,6 @@ node 'webserver1.lsst.org' {
     owner   => 'root',
   }
 }
-node 'yourls2.lsst.org' {
+node 'yourls2.lsst.org.yaml' {
 #  include role::yourls2_server
 }
