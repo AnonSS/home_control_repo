@@ -27,4 +27,9 @@ node 'webserver1.lsst.org' {
 }
 node 'yourls2.lsst.org.yaml' {
 #  include role::yourls2_server
+  file {'/root/README':
+    ensure  => file,
+    content => 'Welcome to changed again',
+    owner   => 'root',
+  }
 }
