@@ -6,6 +6,9 @@ class profile::base {
 	class { 'timezone':
     timezone => 'UTC',
 }
+  class { '::nagios::client':
+     nrpe_allowed_hosts => '140.252.32.34',
+}
   package { 'git':
 		ensure => installed,
 	}
