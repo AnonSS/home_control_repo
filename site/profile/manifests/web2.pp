@@ -9,7 +9,7 @@ class profile::web2 {
 }
   file {'/root/README':
     ensure  => file,
-    content => 'Welcome to web2',
+    content => 'Welcome to web2 at 924',
     owner   => 'root',
   }
 }
