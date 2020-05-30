@@ -1,5 +1,5 @@
 class profile::web2 {
-  include nginx
+#  include nginx
   package {'httpd':
     ensure => present,
 }
