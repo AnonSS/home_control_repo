@@ -3,8 +3,9 @@ class profile::base {
   user {'admin':
     ensure => present
   }
-classes:
-  - 'timezone'
+	class { 'timezone':
+    timezone => 'UTC',
+}
   package { 'git':
 		ensure => installed,
 	}
