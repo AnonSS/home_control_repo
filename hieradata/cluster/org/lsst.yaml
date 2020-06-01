@@ -1,0 +1,26 @@
+---
+timezone::timezone: "UTC"
+ssh::client_options:
+  GlobalKnownHostsFile: "/var/lib/sss/pubconf/known_hosts"
+  PubkeyAuthentication: "yes"
+  ProxyCommand: "/usr/bin/sss_ssh_knownhostsproxy -p %p %h"
+
+sudo::config_file_replace: false
+sudo::purge: false
+accounts::user_list:
+  root:
+    password: "%{root_pw}"
+  ssobhani:  # local a/c
+    groups:
+      - "wheel_b"
+    sshkeys:
+      - "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAictUaJdM0LsjA4Lx8zWtZOHM82VNrwBaK507GRFW6FcDcs2ggaLQkqAIAmA2kCemkDeM31ylR9QJ4gkM17pq57NITER4MkODR8BmLYLcNPhcJ33Eje5qHuc6wapuE9mg5OJcSeBt/PimdKxqNl+bmYFXe6UkCPiAGFPv6hEobWA7O2p8Tp92SkDhxE0wST8Sxs/FpQN5LWQ8BjOU3mdbOZairdIXHzdl308VY0aMYvD/uhi22l6CndCTCRe8WJ0UjOaY5CmKHQZWVb1auxFj0LEz1qVB/ZZd9Kn0NPJ2f3zzll8mJCZSUJtcLZCgGiX9Dyf4J071aHUTUdXe+5UnPQ== rsa-key-20190116"
+selinux::mode: "disabled"
+firewall::ensure: "stopped"
+puppet_agent::package_version: "6.7.0"
+puppet_agent::collection: "puppet6"
+
+yum::plugin::versionlock:
+  # trigger `yum clean all`
+  clean: true  
+  
