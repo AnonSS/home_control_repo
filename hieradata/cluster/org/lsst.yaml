@@ -1,5 +1,41 @@
 ---
 timezone::timezone: "UTC"
+ssh::server_options:
+  Port: 22
+  Protocol: 2
+  AddressFamily: "inet"
+  HostKey:
+    - "/etc/ssh/ssh_host_rsa_key"
+    - "/etc/ssh/ssh_host_ecdsa_key"
+    - "/etc/ssh/ssh_host_ed25519_key"
+  SyslogFacility: "AUTH"
+  LogLevel: "INFO"
+  LoginGraceTime: 120
+  PermitRootLogin: "without-password"
+  PubkeyAuthentication: "yes"
+  HostbasedAuthentication: "no"
+  IgnoreUserKnownHosts: "no"
+  IgnoreRhosts: "no"
+  PasswordAuthentication: "no"
+  ChallengeResponseAuthentication: "yes"
+  GSSAPIAuthentication: "yes"
+  GSSAPICleanupCredentials: "yes"
+  UsePAM: "yes"
+  AllowTcpForwarding: "yes"
+  X11Forwarding: "yes"
+  X11UseLocalhost: "yes"
+  PrintMotd: "no"
+  TCPKeepAlive: "yes"
+  ClientAliveInterval: 0
+  ClientAliveCountMax: 3
+  UseDNS: "no"
+  PermitTunnel: "no"
+  Banner: "none"
+  XAuthLocation: "/usr/bin/xauth"
+  Subsystem: "sftp /usr/libexec/openssh/sftp-server"
+  KerberosAuthentication: "no"
+  AuthorizedKeysCommand: "/usr/bin/sss_ssh_authorizedkeys"
+  AuthorizedKeysCommandUser: "nobody"
 ssh::client_options:
   GlobalKnownHostsFile: "/var/lib/sss/pubconf/known_hosts"
   PubkeyAuthentication: "yes"
@@ -23,4 +59,3 @@ puppet_agent::collection: "puppet6"
 yum::plugin::versionlock:
   # trigger `yum clean all`
   clean: true  
-  
