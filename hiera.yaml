@@ -1,5 +1,5 @@
 ---
-version: 5
+#version: 5
 defaults:
   data_hash: "yaml_data"
 hierarchy:
