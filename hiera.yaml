@@ -4,7 +4,7 @@ defaults:
   data_hash: "yaml_data"
 hierarchy:
   - name: "private hiera"
-    datadir: "/etc/puppetlabs/code/%{environment}"
+    datadir: "/etc/puppetlabs/code/hieradata/private/%{environment}"
     paths:
       - "node/%{fqdn}.yaml"
       - "site/%{site}/cluster/%{cluster}/role/%{role}.yaml"
