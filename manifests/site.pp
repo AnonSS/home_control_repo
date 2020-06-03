@@ -21,4 +21,3 @@ $packages = lookup(
 if ($packages) {
   ensure_packages($packages)
 }
-
