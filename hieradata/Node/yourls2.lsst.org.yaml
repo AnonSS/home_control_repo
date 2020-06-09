@@ -1,5 +1,5 @@
 ---
-classes:
+#classes:
   # - "profile::web2"
   # - "profile::base"
   # - "nginx"
