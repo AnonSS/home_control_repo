@@ -15,18 +15,18 @@ cron::job:
 r10k::mcollective: false
 r10k::cachedir: "/var/cache/r10k"
 r10k::sources:
-  control:
-    remote: "https://github.com/shahramsobhani/foreman_control_repo_test"
-    basedir: "/etc/puppetlabs/code/environments"
-    invalid_branches: "correct"
+  # control:
+  #   remote: "https://github.com/shahramsobhani/foreman_control_repo_test"
+  #   basedir: "/etc/puppetlabs/code/environments"
+  #   invalid_branches: "correct"
   lsst_hiera_private:
     remote: "git@github.com:shahramsobhani/puppet_hiera_private_test.git"
     basedir: "/etc/puppetlabs/code/hieradata/private"
     invalid_branches: "correct"
-  # lsst_hiera_public:
-  #   remote: "https://github.com/lsst-it/lsst-puppet-hiera.git"
-  #   basedir: "/etc/puppetlabs/code/hieradata/public"
-  #   invalid_branches: "correct"
+  lsst_hiera_public:
+    remote: "https://github.com/shahramsobhani/foreman_control_repo_test.git"
+    basedir: "/etc/puppetlabs/code/hieradata/public"
+    invalid_branches: "correct"
 r10k::postrun: ['/bin/hammer', 'proxy', 'import-classes', '--id=1']
 r10k::webhook::config::use_mcollective: false
 r10k::webhook::config::enable_ssl: false
