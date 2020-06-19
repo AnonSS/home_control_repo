@@ -1,3 +1,4 @@
 ---
 classes:
-   - "timezone"
+   - profile::core::common
+#   - "timezone"
