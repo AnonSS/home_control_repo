@@ -11,12 +11,12 @@ class profile::core::common(
   # include epel
   # include sudo
   # include accounts
-  # include puppet_agent
+  include puppet_agent
   # include resolv_conf
   # include ssh
   # include easy_ipa
   # include augeas
-  # include rsyslog
+  include rsyslog
   # include rsyslog::config
   # include profile::core::hardware
   # include profile::core::dielibwrapdie
