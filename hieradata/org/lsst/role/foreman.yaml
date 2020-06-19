@@ -20,7 +20,7 @@ r10k::sources:
   #   basedir: "/etc/puppetlabs/code/environments"
   #   invalid_branches: "correct"
   lsst_hiera_private:
-    remote: "git@github.com:shahramsobhani/puppet_hiera_private_test.git"
+    remote: "git@github.com:shahramsobhani/shahramsobhani-puppet-hiera-private-test.git"
     basedir: "/etc/puppetlabs/code/hieradata/private"
     invalid_branches: "correct"
   lsst_hiera_public:
