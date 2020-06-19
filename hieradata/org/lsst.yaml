@@ -41,6 +41,10 @@ ssh::client_options:
   PubkeyAuthentication: "yes"
   ProxyCommand: "/usr/bin/sss_ssh_knownhostsproxy -p %p %h"
 
+accounts::user_list:
+  testadmin:
+    ensure: "present"
+    
 sudo::config_file_replace: false
 sudo::purge: false
 # accounts::user_list:
