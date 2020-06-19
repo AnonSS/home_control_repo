@@ -21,7 +21,7 @@ class profile::core::common(
   # include profile::core::hardware
   # include profile::core::dielibwrapdie
 
-  if $collect_metrics {
-    include profile::core::telegraf
-  }
+  # if $collect_metrics {
+  #   include profile::core::telegraf
+  # }
 }
