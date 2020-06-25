@@ -13,7 +13,7 @@ class profile::core::common(
   # include accounts
   include puppet_agent
   # include resolv_conf
-  # include ssh
+  include ssh
   # include easy_ipa
   # include augeas
   include rsyslog
