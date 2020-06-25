@@ -1,6 +1,6 @@
 ---
 classes:
-#   - profile::core::common
+   - profile::core::common
 #   - "timezone"
 #   - "postfix"
-   - "ssh" 
+#   - "ssh" 
