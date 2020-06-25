@@ -8,7 +8,7 @@ class profile::core::common(
   # include firewall
   # include irqbalance
   # include sysstat
-  include epel
+  # include epel
   # include sudo
   # include accounts
   include puppet_agent
