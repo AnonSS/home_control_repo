@@ -9,7 +9,7 @@ class profile::core::common(
   # include irqbalance
   # include sysstat
   # include epel
-  # include sudo
+  include sudo
   # include accounts
   include puppet_agent
   # include resolv_conf
