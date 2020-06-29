@@ -12,12 +12,12 @@ class profile::it::logging {
 	# 	bind_ip => ['127.0.0.1'],
 	# }
 
-	$xms = lookup("elasticsearch_xms")
-	$xmx = lookup("elasticsearch_xmx")
+	# $xms = lookup("elasticsearch_xms")
+	# $xmx = lookup("elasticsearch_xmx")
 
-	class { 'elastic_stack::repo':
-		version => 5,
-	}
+	# class { 'elastic_stack::repo':
+	# 	version => 5,
+	# }
 
 	class { 'elasticsearch':
 		#version      => '5.5.1',
