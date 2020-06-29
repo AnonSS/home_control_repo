@@ -1,5 +1,5 @@
 class profile::default {
-  include ssh
+#  include ssh
 #  include profile::it::monitoring
   # All telegraf configuration came from Hiera
 
