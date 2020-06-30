@@ -1,5 +1,5 @@
 ---
 classes:
     - profile::core::common
-  #  - profile::default
+    - profile::default
 #   - profile::it::logging
