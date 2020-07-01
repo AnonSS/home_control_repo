@@ -1,4 +1,4 @@
 ---
 classes:
-  - "profile::core::common"
+  - "profile::core::commn"
   - "role_web"
