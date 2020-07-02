@@ -2,5 +2,5 @@
 classes:
     - profile::core::common
     - profile::it::web
-#    - profile::default
+    - role::web
 #   - profile::it::logging
