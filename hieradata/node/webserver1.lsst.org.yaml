@@ -1,6 +1,5 @@
 ---
 classes:
-    # - profile::core::common
-    # - profile::it::web
-    - role::tu::web
+     - profile::core::common
+     - profile::it::web
 #   - profile::it::logging
