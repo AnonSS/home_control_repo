@@ -2,5 +2,5 @@
 classes:
    - profile::core::common
    - profile::default
-#   - profile::it::logging
+   - profile::it::graylog
 #   - "timezone"
