@@ -3,4 +3,5 @@ classes:
    - profile::core::common
    - profile::default
    - profile::it::yourls
+   - "nginx"
 #   - "timezone"
