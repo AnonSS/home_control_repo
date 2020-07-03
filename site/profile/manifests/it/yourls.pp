@@ -1,6 +1,6 @@
 class profile::it::yourls {
   - include 
-  	package{"sqlite":
+  	package{"php-curl":
 		ensure => installed,
 	}
 }
