@@ -7,8 +7,6 @@ class profile::default {
   $enhancers = [ 'sssd', 'realmd', 'oddjob', 'oddjob-mkhomedir', 'adcli', 'samba-common', 'samba-common-tools', 'krb5-workstation', 'openldap-clients', 'policycoreutils-python' ]
 
   package { $enhancers: }
-
-}
   # Firewall and security measurements
   class { 'firewalld':
     service_ensure => 'running',
@@ -44,4 +42,4 @@ class profile::default {
     require  => Class['firewalld'],
     onlyif   => "[[ \"\$(firewall-cmd --list-protocols)\" != *\"icmp\"* ]]"
   }
-
+}
