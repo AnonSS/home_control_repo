@@ -1,8 +1,7 @@
 ---
 classes:
-   - nginx
-   - profile::core::common
-   - profile::default
-   - profile::it::yourls
-
+   - "nginx"
+   - "profile::core::common"
+   - "profile::default"
+   - "profile::it::yourls"
 #   - "timezone"
