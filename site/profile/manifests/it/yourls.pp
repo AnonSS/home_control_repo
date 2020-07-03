@@ -16,4 +16,8 @@ class profile::it::yourls {
   	package{"php-common":
 		ensure => installed,
 	}
+nginx::resource::server { 'yourls.lsst.org':
+  listen_port => 80,
+  proxy       => 'http://localhost:5601',
+}
 }
