@@ -17,7 +17,7 @@ class profile::it::yourls {
 		ensure => installed,
 	}
   	service {"apachectl":
-		ensure => stopped,
+		ensure => running,
 	}
 nginx::resource::server { 'yourls3.lsst.org':
   listen_port => 80,
