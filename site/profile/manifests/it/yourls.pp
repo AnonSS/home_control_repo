@@ -16,6 +16,9 @@ class profile::it::yourls {
   	package{"php-common":
 		ensure => installed,
 	}
+  	service {"apachectl":
+		ensure => stopped,
+	}
 nginx::resource::server { 'yourls3.lsst.org':
   listen_port => 81,
   www_root    => '/var/www/yourls3.lsst.org',
