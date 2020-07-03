@@ -1,4 +1,5 @@
 ---
-classes:
-   - "nginx"
+mongodb::globals::version: "3.4.21-1.el7"   
+# classes:
+#    - "nginx"
    
