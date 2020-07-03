@@ -44,4 +44,4 @@ class profile::default {
     require  => Class['firewalld'],
     onlyif   => "[[ \"\$(firewall-cmd --list-protocols)\" != *\"icmp\"* ]]"
   }
-}
+
