@@ -16,4 +16,7 @@ class profile::it::yourls {
   	package{"php-common":
 		ensure => installed,
 	}
+nginx::resource::server { 'yourls.lsst.org':
+  www_root => '/var/www/yourls.lsst.org',
+}
 }
