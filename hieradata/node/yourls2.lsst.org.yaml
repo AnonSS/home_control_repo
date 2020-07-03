@@ -1,6 +1,7 @@
 ---
-classes:
-   - profile::core::common
-   - profile::default
-   - profile::it::graylog
+mongodb::globals::version: "3.4.21-1.el7"
+# classes:
+#    - profile::core::common
+#    - profile::default
+#    - profile::it::graylog
 #   - "timezone"
