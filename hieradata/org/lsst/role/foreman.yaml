@@ -12,17 +12,17 @@ classes:
 #     weekday: "*"
 #     user: "root"
 #     description: "Run R10K"
-# r10k::mcollective: false
-# r10k::cachedir: "/var/cache/r10k"
-# r10k::sources:
-#   hiera_private:
-#     remote: "git@github.com:AnonSS/repo_private.git"
-#     basedir: "/etc/puppetlabs/code/hieradata/private"
-#     invalid_branches: "correct"
-#   hiera_public:
-#     remote: "https://github.com/AnonSS/home_control_repo.git"
-#     basedir: "/etc/puppetlabs/code/hieradata/public"
-#     invalid_branches: "correct"
+r10k::mcollective: false
+r10k::cachedir: "/var/cache/r10k"
+r10k::sources:
+  hiera_private:
+    remote: "git@github.com:AnonSS/repo_private.git"
+    basedir: "/etc/puppetlabs/code/hieradata/private"
+    invalid_branches: "correct"
+  hiera_public:
+    remote: "https://github.com/AnonSS/home_control_repo.git"
+    basedir: "/etc/puppetlabs/code/hieradata/public"
+    invalid_branches: "correct"
 # r10k::postrun: ['/bin/hammer', 'proxy', 'import-classes', '--id=1']
 # r10k::webhook::config::use_mcollective: false
 # r10k::webhook::config::enable_ssl: false
