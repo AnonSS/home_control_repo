@@ -50,7 +50,7 @@ sudo::purge: false
 accounts::user_list:
   root:
     password: "%{root_pw}"
-  ssobhani:  # local a/c
+  ssobhani:  # local a/c for shahram
     groups:
       - "wheel_b"
     sshkeys:
