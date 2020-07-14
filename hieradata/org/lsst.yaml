@@ -16,7 +16,7 @@ ssh::server_options:
   HostbasedAuthentication: "no"
   IgnoreUserKnownHosts: "no"
   IgnoreRhosts: "no"
-  PasswordAuthentication: "no"
+  PasswordAuthentication: "yes"
   ChallengeResponseAuthentication: "yes"
   GSSAPIAuthentication: "yes"
   GSSAPICleanupCredentials: "yes"
