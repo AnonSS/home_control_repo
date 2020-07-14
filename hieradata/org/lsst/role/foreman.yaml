@@ -19,11 +19,11 @@ r10k::sources:
   #   remote: "https://github.com/shahramsobhani/foreman_control_repo_test"
   #   basedir: "/etc/puppetlabs/code/environments"
   #   invalid_branches: "correct"
-  lsst_hiera_private:
+  hiera_private:
     remote: "git@github.com:AnonSS/repo_private.git"
     basedir: "/etc/puppetlabs/code/hieradata/private"
     invalid_branches: "correct"
-  lsst_hiera_public:
+  hiera_public:
     remote: "https://github.com/AnonSS/home_control_repo.git"
     basedir: "/etc/puppetlabs/code/hieradata/public"
     invalid_branches: "correct"
