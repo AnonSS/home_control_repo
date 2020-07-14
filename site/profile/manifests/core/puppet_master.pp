@@ -1,7 +1,6 @@
 class profile::core::puppet_master(
 #  Stdlib::HTTPSUrl $smee_url
-#) 
-{
+) {
   include cron
   include r10k
   include r10k::webhook
