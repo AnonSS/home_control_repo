@@ -1,1 +1,2 @@
-profile::core::puppet_master::smee_url: "https://smee.io/XM29Yuo8DIu4M17"
+---
+#profile::core::puppet_master::smee_url: "https://smee.io/XM29Yuo8DIu4M17"
