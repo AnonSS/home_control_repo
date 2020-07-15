@@ -31,15 +31,15 @@ ssh::server_options:
   UseDNS: "no"
   PermitTunnel: "no"
   Banner: "none"
-  XAuthLocation: "/usr/bin/xauth"
-  Subsystem: "sftp /usr/libexec/openssh/sftp-server"
-  KerberosAuthentication: "no"
-  AuthorizedKeysCommand: "/usr/bin/sss_ssh_authorizedkeys"
-  AuthorizedKeysCommandUser: "nobody"
-ssh::client_options:
-  GlobalKnownHostsFile: "/var/lib/sss/pubconf/known_hosts"
-  PubkeyAuthentication: "yes"
-  ProxyCommand: "/usr/bin/sss_ssh_knownhostsproxy -p %p %h"
+#   XAuthLocation: "/usr/bin/xauth"
+#   Subsystem: "sftp /usr/libexec/openssh/sftp-server"
+#   KerberosAuthentication: "no"
+#   AuthorizedKeysCommand: "/usr/bin/sss_ssh_authorizedkeys"
+#   AuthorizedKeysCommandUser: "nobody"
+# ssh::client_options:
+#   GlobalKnownHostsFile: "/var/lib/sss/pubconf/known_hosts"
+#   PubkeyAuthentication: "yes"
+#   ProxyCommand: "/usr/bin/sss_ssh_knownhostsproxy -p %p %h"
 
 accounts::user_list:
   testadmin:
