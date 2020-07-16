@@ -19,7 +19,7 @@ resolv_conf::nameservers:
   - "192.168.0.1"
   - "1.0.0.1"
 resolv_conf::searchpath:
-  - "home.vm
+  - "home.vm"
 #  - "noao.edu"
 
 # accounts::user_list:
