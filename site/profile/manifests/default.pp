@@ -1,7 +1,7 @@
 class profile::default {
 #  include ssh
 #  include profile::it::monitoring
-  # All telegraf configuration came from Hiera
+# All telegraf configuration came from Hiera
   Package { ensure => 'installed' }
 
   $enhancers = [ 'sssd', 'realmd', 'oddjob', 'oddjob-mkhomedir', 'adcli', 'samba-common', 'samba-common-tools', 'krb5-workstation', 'openldap-clients', 'policycoreutils-python' ]
