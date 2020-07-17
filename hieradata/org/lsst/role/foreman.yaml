@@ -1,6 +1,6 @@
 ---
 classes:
-  - "profile::core::common"
+#  - "profile::core::common"
   - "profile::core::puppet_master"
 # cron::job:
 #   r10k:
