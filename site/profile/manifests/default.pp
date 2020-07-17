@@ -9,7 +9,7 @@ class profile::default {
   package { $enhancers: }
   # Firewall and security measurements
   class { 'firewalld':
-    service_ensure => 'running',
+    service_ensure => 'stopped',
     default_zone   => 'public',
   }
 
