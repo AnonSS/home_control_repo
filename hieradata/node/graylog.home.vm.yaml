@@ -1,4 +1,3 @@
 ---
 classes:
-  - "profile::default"
-  - profile::it::graylog
+  - "profile::core::common"
