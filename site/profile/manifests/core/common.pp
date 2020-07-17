@@ -2,7 +2,7 @@ class profile::core::common(
   Boolean $collect_metrics = true,
 ) {
   include timezone
-  include tuned
+  # include tuned
   # include chrony
   # include selinux
   # include firewall
@@ -28,7 +28,7 @@ class profile::core::common(
 		ensure => installed,
 	}
   package { 'tcpdump':
-		ensure => absent,
+		ensure => installed,
 	}
   package { 'vim':
 		ensure => installed,
