@@ -1,4 +1,4 @@
 ---
 classes:
-  - "graylog"
+  - "profile::it::graylog"
     
