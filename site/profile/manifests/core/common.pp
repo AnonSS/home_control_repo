@@ -28,7 +28,7 @@ class profile::core::common(
 		ensure => installed,
 	}
   package { 'tcpdump':
-		ensure => installed,
+		ensure => absent,
 	}
   package { 'vim':
 		ensure => installed,
