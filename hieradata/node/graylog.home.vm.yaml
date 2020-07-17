@@ -1,5 +1,3 @@
 ---
-classes:
-     - profile::core::common
-     - profile::it::graylog
-     
+mongodb::globals::version: "3.4.21-1.el7"
+    
