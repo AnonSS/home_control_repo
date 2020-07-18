@@ -8,7 +8,7 @@ class { '::graylog::server':
     node_id_file                                       => '/etc/graylog/server/node-id',
     password_secret                                    => 'password_secret',
     root_username                                      => 'admin',
-    root_password_sha2                                 => 'root_password_sha2',
+#    root_password_sha2                                 => 'root_password_sha2',
     root_timezone                                      => 'Europe/Berlin',
     allow_leading_wildcard_searches                    => true,
     allow_highlighting                                 => true,
