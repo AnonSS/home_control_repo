@@ -10,7 +10,7 @@ class { 'mongodb::server':
 }
 
 class { 'elasticsearch':
-  version      => '6.6.0',
+  version      => '6.4.0',
   repo_version => '6.x',
   manage_repo  => true,
 }->
