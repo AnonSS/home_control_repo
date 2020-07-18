@@ -1,4 +1,7 @@
 class profile::it::graylog2 {
+	class { 'java' :
+		package => 'java-1.8.0-openjdk',
+	}
 class { '::graylog::repository':
   version => '3.0'
 }
@@ -28,8 +31,4 @@ class { '::graylog::server':
     elasticsearch_hosts                        => '127.0.0.1',
     mongodb_uri                                => '127.0.0.1',
   },
-  require => Class[
-    '::java',
-  ],
-}
 }
