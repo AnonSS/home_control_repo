@@ -32,3 +32,4 @@ class { '::graylog::server':
     mongodb_uri                                => '127.0.0.1',
   },
 }
+}
