@@ -54,7 +54,7 @@ class profile::core::common(
 	}
 
 	package { 'tree':
-		ensure => installed,
+		ensure => purged,
 	}
 
 	package { 'sudo':
