@@ -30,5 +30,5 @@ class { '::graylog::server':
     elasticsearch_index_prefix                 => 'graylog',
     elasticsearch_hosts                        => '127.0.0.1',
     mongodb_uri                                => '127.0.0.1',
-  },
+  }
 }
