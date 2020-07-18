@@ -1,4 +1,4 @@
 ---
 classes:
-#   - "r10k"
+   - "r10k"
 #profile::core::puppet_master::smee_url: ""
