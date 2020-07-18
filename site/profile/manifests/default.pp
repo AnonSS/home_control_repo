@@ -13,28 +13,4 @@ class profile::default {
     default_zone   => 'public',
   }
 
-  firewalld_zone { 'public':
-    ensure  => present,
-    target  => 'DROP',
-    sources => [
-      '192.168.0.0/24',
-    ],
-  }
-
-  firewalld_service { 'Enable SSH':
-    ensure  => 'present',
-    service => 'ssh',
-  }
-
-  firewalld_service { 'Enable DHCP':
-    ensure  => 'present',
-    service => 'dhcpv6-client',
-  }
-
-  exec{'enable_icmp':
-    provider => 'shell',
-    command  => '/usr/bin/firewall-cmd --add-protocol=icmp --permanent && /usr/bin/firewall-cmd --reload',
-    require  => Class['firewalld'],
-    onlyif   => "[[ \"\$(firewall-cmd --list-protocols)\" != *\"icmp\"* ]]"
-  }
 }
