@@ -1,3 +1,4 @@
+class profile::it::graylog2 {
 class { '::graylog::repository':
   version => '3.0'
 }
@@ -30,4 +31,5 @@ class { '::graylog::server':
   require => Class[
     '::java',
   ],
+}
 }
