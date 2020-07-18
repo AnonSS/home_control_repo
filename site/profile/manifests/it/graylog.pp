@@ -25,7 +25,7 @@ class profile::it::graylog {
 	}
 
 	class { 'elasticsearch':
-		version      => '6.4.1',
+		version      => '6.3.1',
 		manage_repo  => true,
 		jvm_options => [
 			"-Xms${xms}",
