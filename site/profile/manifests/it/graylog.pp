@@ -1,8 +1,3 @@
-# Note, while deploying Graylog, the elastic and elasticsearch modules should go into /etc/puppet/modules. Somehow
-# with this deployment some functions are not well captured, particularlly the oss_xpack.rb provider.
-# Notes:
-#	* Firewall rules configured on Hiera
-
 class profile::it::graylog {
 
 	class { 'java' :
