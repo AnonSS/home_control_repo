@@ -1,4 +1,3 @@
 ---
 classes:
-  - "profile::default"
-include graylog
+  - "profile::default" # comment
