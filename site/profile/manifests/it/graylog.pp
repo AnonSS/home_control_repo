@@ -11,7 +11,7 @@ class { 'mongodb::server':
 
 class { 'elasticsearch':
   version      => '6.4.0',
-  repo_version => '6.x',
+  repo_version => '6.4.0',
   manage_repo  => true,
 }->
 elasticsearch::instance { 'graylog':
