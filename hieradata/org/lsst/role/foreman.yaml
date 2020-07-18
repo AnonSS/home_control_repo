@@ -21,7 +21,7 @@ r10k::sources:
 #    invalid_branches: "correct"
   hiera_public:
     remote: "https://github.com/AnonSS/home_control_repo"
-    basedir: "/etc/puppetlabs/code/hieradata/public"
+    basedir: "/etc/puppetlabs/code/environments"
 #    invalid_branches: "correct"
 # r10k::postrun: ['/bin/hammer', 'proxy', 'import-classes', '--id=1']
 # r10k::webhook::config::use_mcollective: false
