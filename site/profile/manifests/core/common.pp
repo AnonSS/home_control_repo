@@ -1,5 +1,5 @@
 class profile::core::common(
-  Boolean $collect_metrics = true,
+#  Boolean $collect_metrics = true,
 ) {
   include timezone
   # include tuned
