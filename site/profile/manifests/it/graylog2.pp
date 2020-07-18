@@ -16,7 +16,7 @@ class { '::graylog::server':
     http_enable_tls                            => true,
     http_tls_cert_file                         => "${ssl_config_dir}/${ssl_graylog_cert_filename}",
     http_tls_key_file                          => "${ssl_config_dir}/${ssl_graylog_key_filename}",
-    http_tls_key_password                      => "${tls_cert_pass}"
+    http_tls_key_password                      => "${tls_cert_pass}",
     rotation_strategy                          => 'time',
     retention_strategy                         => 'delete',
     elasticsearch_max_time_per_index           => '1d',
