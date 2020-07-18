@@ -1,6 +1,6 @@
 class { '::graylog::repository':
   version => '3.0'
-}->
+}
 class { '::graylog::server':
   config  => {
     is_master                                  => true,
