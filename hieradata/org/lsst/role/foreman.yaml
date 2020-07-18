@@ -18,11 +18,11 @@ r10k::sources:
   hiera_private:
     remote: "git@github.com:AnonSS/repo_private.git"
     basedir: "/etc/puppetlabs/code/hieradata/private"
-#    invalid_branches: "correct"
+    invalid_branches: "correct"
   hiera_public:
     remote: "https://github.com/AnonSS/home_control_repo"
     basedir: "/etc/puppetlabs/code/environments"
-#    invalid_branches: "correct"
+    invalid_branches: "correct"
 # r10k::postrun: ['/bin/hammer', 'proxy', 'import-classes', '--id=1']
 # r10k::webhook::config::use_mcollective: false
 # r10k::webhook::config::enable_ssl: false
