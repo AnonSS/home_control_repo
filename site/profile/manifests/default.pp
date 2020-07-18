@@ -1,5 +1,7 @@
 class profile::default {
-#  include ssh
+  include timezone
+  include ssh
+  include vim
 #  include profile::it::monitoring
 # All telegraf configuration came from Hiera
   Package { ensure => 'installed' }
