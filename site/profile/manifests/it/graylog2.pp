@@ -124,7 +124,7 @@ class { '::graylog::server':
     elasticsearch_replicas                     => '1',
     elasticsearch_index_prefix                 => 'graylog',
     elasticsearch_hosts                        => 'http://graylog2.home.vm:9200',
-    mongodb_uri                                => '127.0.0.1',
+    mongodb_uri                                => 'mongodb://127.0.0.1',
   },
 }
 	$graylog_java_opts = lookup("graylog_java_opts")
