@@ -109,7 +109,7 @@ class { '::graylog::server':
     allow_leading_wildcard_searches            => true,
     allow_highlighting                         => true,
     http_bind_address                          => '0.0.0.0:9000',
-    http_external_uri                          => 'https://graylog2.home.vm:9000',
+    http_external_uri                          => 'https://192.168.0.43:9000',
     http_enable_tls                            => true,
     http_tls_cert_file                         => "${ssl_config_dir}/${ssl_graylog_cert_filename}",
     http_tls_key_file                          => "${ssl_config_dir}/${ssl_graylog_key_filename}",
