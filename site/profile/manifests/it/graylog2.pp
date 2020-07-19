@@ -123,4 +123,13 @@ class { '::graylog::server':
     mongodb_uri                                => '127.0.0.1',
   },
 }
+	$graylog_java_opts = lookup("graylog_java_opts")
+	#Update graylog JAVA_OPTS to use the customized version including the self-signed cert.
+	file_line{ "Update Graylog's JAVA_OPTS":
+		ensure => present,
+		path => "/etc/sysconfig/graylog-server",
+		line => "GRAYLOG_SERVER_JAVA_OPTS=\"${graylog_java_opts} -Djavax.net.ssl.trustStore=${ssl_config_dir}/${graylog_cacert_filename}\"",
+		match => "GRAYLOG_SERVER_JAVA_OPTS*",
+		require => Class["graylog::server"]
+	}
 }
