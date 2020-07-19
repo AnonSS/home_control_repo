@@ -129,6 +129,7 @@ class { '::graylog::repository':
 $tls_password_array = split($ssl_key_passout_phrase, /:/)
 $tls_cert_pass = $tls_password_array[1] 
 class { '::graylog::server':
+  package_version => '3.0.0-12',
   config  => {
     is_master                                  => true,
     node_id_file                               => '/etc/graylog/server/node-id',
