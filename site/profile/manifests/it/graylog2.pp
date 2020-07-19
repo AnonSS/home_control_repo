@@ -11,7 +11,7 @@ class { '::graylog::server':
     node_id_file                               => '/etc/graylog/server/node-id',
     password_secret                            => lookup("graylog_server_password_secret"),
     root_username                              => 'admin',
-    root_password_sha2                         => 'https://'${graylog_canonical_name}:9000", #lookup("graylog_server_root_password_sha2"),
+    root_password_sha2                         => 'https://'${graylog_canonical_name}:9000', #lookup("graylog_server_root_password_sha2"),
     root_timezone                              => 'UTC',
     allow_leading_wildcard_searches            => true,
     allow_highlighting                         => true,
