@@ -1,8 +1,13 @@
 class profile::it::graylog3 {
-class {'mongodb::globals':
-  manage_package_repo => true,
-  version             => '3.6',
-}
--> class {'mongodb::client': }
--> class {'mongodb::server': }
-}
+	class { 'java' :
+		package => 'java-1.8.0-openjdk',
+	}
+
+	class { 'mongodb::globals':
+		manage_package_repo => true,
+	}
+
+	class { 'mongodb::server':
+		bind_ip => ['127.0.0.1'],
+	}
+}  
