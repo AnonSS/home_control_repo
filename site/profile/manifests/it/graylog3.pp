@@ -8,7 +8,12 @@ class {'mongodb::globals':
   version             => '3.6',
 }
 
-	class { 'mongodb::server':
-		bind_ip => ['127.0.0.1'],
-	}
+class {'mongodb::server':
+  auth => true,
+}
+
+mongodb::db { 'testdb':
+  user          => 'user1',
+  password_hash => 'a15fbfca5e3a758be80ceaf42458bcd8',
+}
 }  
