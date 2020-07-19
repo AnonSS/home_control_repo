@@ -1,5 +1,40 @@
 class profile::it::graylog2 {
-	class { 'java' :
+class { '::graylog::repository':
+  version => '3.0'
+  package_version => '3.0.0-12',
+}
+	class { 'mongodb::globals':
+		manage_package_repo => true,
+		version             => '3.1.0',
+	}
+
+	class { 'mongodb::server':
+		bind_ip => ['127.0.0.1'],
+	}
+
+	$xms = lookup("elasticsearch_xms")
+	$xmx = lookup("elasticsearch_xmx")
+
+	class { 'elastic_stack::repo':
+		version => 6,
+	}
+
+	class { 'elasticsearch':
+		version      => '6.3.1',
+		manage_repo  => true,
+		jvm_options => [
+			"-Xms${xms}",
+			"-Xmx${xmx}"
+		]
+	}
+
+	elasticsearch::instance { 'graylog':
+		config => {
+			'cluster.name' => 'graylog',
+			'network.host' => '127.0.0.1',
+		}
+	}
+class { 'java' :
 		package => 'java-1.8.0-openjdk',
 	}
 	#################################################################################################################
@@ -91,46 +126,13 @@ class profile::it::graylog2 {
 		require => [Exec["Create graylog SSL key"], Exec["Copy JAVA cacerts into graylog's directory"]]
 	}
 
-	class { 'mongodb::globals':
-		manage_package_repo => true,
-		version             => '3.1.0',
-	}
-
-	class { 'mongodb::server':
-		bind_ip => ['127.0.0.1'],
-	}
-
-	$xms = lookup("elasticsearch_xms")
-	$xmx = lookup("elasticsearch_xmx")
-
-	class { 'elastic_stack::repo':
-		version => 6,
-	}
-
-	class { 'elasticsearch':
-		version      => '6.3.1',
-		manage_repo  => true,
-		jvm_options => [
-			"-Xms${xms}",
-			"-Xmx${xmx}"
-		]
-	}
-
-	elasticsearch::instance { 'graylog':
-		config => {
-			'cluster.name' => 'graylog',
-			'network.host' => '127.0.0.1',
-		}
-	}
 
 
-class { '::graylog::repository':
-  version => '3.0'
-}
+
+
 $tls_password_array = split($ssl_key_passout_phrase, /:/)
 $tls_cert_pass = $tls_password_array[1] 
 class { '::graylog::server':
-  package_version => '3.0.0-12',
   config  => {
     is_master                                  => true,
     node_id_file                               => '/etc/graylog/server/node-id',
