@@ -2,36 +2,6 @@ class profile::it::graylog2 {
 	class { 'java' :
 		package => 'java-1.8.0-openjdk',
 	}
-class { '::graylog::repository':
-  version => '3.0'
-}
-class { '::graylog::server':
-  config  => {
-    is_master                                  => true,
-    node_id_file                               => '/etc/graylog/server/node-id',
-    password_secret                            => lookup("graylog_server_password_secret"),
-    root_username                              => 'admin',
-    root_password_sha2                         => lookup("graylog_server_root_password_sha2"),
-    root_timezone                              => 'UTC',
-    allow_leading_wildcard_searches            => true,
-    allow_highlighting                         => true,
-    http_bind_address                          => '0.0.0.0:9000',
-    http_external_uri                          => 'https://${canonical_name}:9000',
-    http_enable_tls                            => true,
-    http_tls_cert_file                         => "${ssl_config_dir}/${ssl_graylog_cert_filename}",
-    http_tls_key_file                          => "${ssl_config_dir}/${ssl_graylog_key_filename}",
-    http_tls_key_password                      => "${tls_cert_pass}",
-    rotation_strategy                          => 'time',
-    retention_strategy                         => 'delete',
-    elasticsearch_max_time_per_index           => '1d',
-    elasticsearch_max_number_of_indices        => '30',
-    elasticsearch_shards                       => '4',
-    elasticsearch_replicas                     => '1',
-    elasticsearch_index_prefix                 => 'graylog',
-    elasticsearch_hosts                        => '127.0.0.1',
-    mongodb_uri                                => '127.0.0.1',
-  },
-}
 	#################################################################################################################
 	# Requirements for graylog::server
 	$ssl_config_dir = "/etc/graylog/server"
@@ -121,37 +91,36 @@ class { '::graylog::server':
 		require => [Exec["Create graylog SSL key"], Exec["Copy JAVA cacerts into graylog's directory"]]
 	}
 
-	# Setup Graylog server
 
-	$tls_password_array = split($ssl_key_passout_phrase, /:/)
-	$tls_cert_pass = $tls_password_array[1] 
-	class { 'graylog::server':
-		package_version => '3.0.0-12',
-		config => {
-			password_secret => lookup("graylog_server_password_secret"),    # Fill in your password secret, must have more than 16 characters
-			root_password_sha2 => lookup("graylog_server_root_password_sha2"), # Fill in your root password hash
-			web_listen_uri => "https://${graylog_canonical_name}:9000",
-			rest_listen_uri => "https://${graylog_canonical_name}:9000/api",
-			rest_transport_uri => "https://${graylog_canonical_name}:9000/api",
-			rest_enable_tls => true,
-			rest_tls_cert_file => "${ssl_config_dir}/${ssl_graylog_cert_filename}",
-			rest_tls_key_file => "${ssl_config_dir}/${ssl_graylog_key_filename}",
-			rest_tls_key_password => "${tls_cert_pass}",
-			web_enable_tls => true,
-			web_tls_cert_file => "${ssl_config_dir}/${ssl_graylog_cert_filename}",
-			web_tls_key_file => "${ssl_config_dir}/${ssl_graylog_key_filename}",
-			web_tls_key_password => "${tls_cert_pass}"
-		},
-	}
 
-	$graylog_java_opts = lookup("graylog_java_opts")
-	#Update graylog JAVA_OPTS to use the customized version including the self-signed cert.
-	file_line{ "Update Graylog's JAVA_OPTS":
-		ensure => present,
-		path => "/etc/sysconfig/graylog-server",
-		line => "GRAYLOG_SERVER_JAVA_OPTS=\"${graylog_java_opts} -Djavax.net.ssl.trustStore=${ssl_config_dir}/${graylog_cacert_filename}\"",
-		match => "GRAYLOG_SERVER_JAVA_OPTS*",
-		require => Class["graylog::server"]
-	}
-
+class { '::graylog::repository':
+  version => '3.0'
+}
+class { '::graylog::server':
+  config  => {
+    is_master                                  => true,
+    node_id_file                               => '/etc/graylog/server/node-id',
+    password_secret                            => lookup("graylog_server_password_secret"),
+    root_username                              => 'admin',
+    root_password_sha2                         => lookup("graylog_server_root_password_sha2"),
+    root_timezone                              => 'UTC',
+    allow_leading_wildcard_searches            => true,
+    allow_highlighting                         => true,
+    http_bind_address                          => '0.0.0.0:9000',
+    http_external_uri                          => 'https://${canonical_name}:9000',
+    http_enable_tls                            => true,
+    http_tls_cert_file                         => "${ssl_config_dir}/${ssl_graylog_cert_filename}",
+    http_tls_key_file                          => "${ssl_config_dir}/${ssl_graylog_key_filename}",
+    http_tls_key_password                      => "${tls_cert_pass}",
+    rotation_strategy                          => 'time',
+    retention_strategy                         => 'delete',
+    elasticsearch_max_time_per_index           => '1d',
+    elasticsearch_max_number_of_indices        => '30',
+    elasticsearch_shards                       => '4',
+    elasticsearch_replicas                     => '1',
+    elasticsearch_index_prefix                 => 'graylog',
+    elasticsearch_hosts                        => '127.0.0.1',
+    mongodb_uri                                => '127.0.0.1',
+  },
+}
 }
