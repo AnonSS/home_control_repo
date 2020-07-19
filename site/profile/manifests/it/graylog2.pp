@@ -1,7 +1,6 @@
 class profile::it::graylog2 {
 class { '::graylog::repository':
   version => '3.0'
-  package_version => '3.0.0-12',
 }
 	class { 'mongodb::globals':
 		manage_package_repo => true,
