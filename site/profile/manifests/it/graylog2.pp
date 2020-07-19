@@ -93,6 +93,7 @@ class profile::it::graylog2 {
 
 	class { 'mongodb::globals':
 		manage_package_repo => true,
+		version             => '3.1.0',
 	}
 
 	class { 'mongodb::server':
