@@ -36,19 +36,19 @@ class { 'mongodb::server':
 class { '::graylog::server':
   package_version => '3.0.0-12',
   config  => {
-			password_secret => lookup("graylog_server_password_secret"),    # Fill in your password secret, must have more than 16 characters
-			root_password_sha2 => lookup("graylog_server_root_password_sha2"), # Fill in your root password hash
-			web_listen_uri => "https://graylog3.home.vm:9000",
-			rest_listen_uri => "https://graylog3.home.vm:9000/api",
-			rest_transport_uri => "https://graylog3.home.vm:9000/api",
-			rest_enable_tls => true,
-			rest_tls_cert_file => "${ssl_config_dir}/${ssl_graylog_cert_filename}",
-			rest_tls_key_file => "${ssl_config_dir}/${ssl_graylog_key_filename}",
-			rest_tls_key_password => "${tls_cert_pass}",
-			web_enable_tls => true,
-			web_tls_cert_file => "${ssl_config_dir}/${ssl_graylog_cert_filename}",
-			web_tls_key_file => "${ssl_config_dir}/${ssl_graylog_key_filename}",
-			web_tls_key_password => "${tls_cert_pass}"
+    password_secret => lookup("graylog_server_password_secret"),    # Fill in your password secret, must have more than 16 characters
+    root_password_sha2 => lookup("graylog_server_root_password_sha2"), # Fill in your root password hash
+    web_listen_uri => "https://graylog3.home.vm:9000",
+    rest_listen_uri => "https://graylog3.home.vm:9000/api",
+    rest_transport_uri => "https://graylog3.home.vm:9000/api",
+    rest_enable_tls => true,
+    rest_tls_cert_file => "${ssl_config_dir}/${ssl_graylog_cert_filename}",
+    rest_tls_key_file => "${ssl_config_dir}/${ssl_graylog_key_filename}",
+    rest_tls_key_password => "${tls_cert_pass}",
+    web_enable_tls => true,
+    web_tls_cert_file => "${ssl_config_dir}/${ssl_graylog_cert_filename}",
+    web_tls_key_file => "${ssl_config_dir}/${ssl_graylog_key_filename}",
+    web_tls_key_password => "${tls_cert_pass}"
 #    elasticsearch_hosts                        => 'http://graylog3.home.vm:9200',
  #   mongodb_uri                                => 'mongodb://mongouser:mongopass@graylog2.home.vm:27017',
   },
