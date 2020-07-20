@@ -65,7 +65,7 @@ class { 'mongodb::server':
 				'alternative_dns_1' => lookup("alternative_dns_1"),
 			}
 		),
-		require => [File[$ssl_config_dir], File_line["Update Graylog's JAVA_OPTS"]],
+#		require => [File[$ssl_config_dir], File_line["Update Graylog's JAVA_OPTS"]],
 	}
 	
 	$certificate_duration = lookup("certificate_duration")
