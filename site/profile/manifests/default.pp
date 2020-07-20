@@ -10,4 +10,9 @@ include ssh
 
   package { $enhancers: }
   # Firewall and security measurements
+	file_line { 'SELINUX=permissive':
+		path  => '/etc/selinux/config',
+		line => 'SELINUX=enforce',
+		match => '^SELINUX=+',
+	}  
 }
