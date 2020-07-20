@@ -31,22 +31,7 @@ class { 'mongodb::server':
     }
  }
  class { 'graylog::repository':
-  version => '3.0',
-	config => {
-		password_secret => lookup("graylog_server_password_secret"),    # Fill in your password secret, must have more than 16 characters
-		root_password_sha2 => lookup("graylog_server_root_password_sha2"), # Fill in your root password hash
-		web_listen_uri => "https://${graylog_canonical_name}:9000",
-		rest_listen_uri => "https://${graylog_canonical_name}:9000/api",
-		rest_transport_uri => "https://${graylog_canonical_name}:9000/api",
-		rest_enable_tls => true,
-		rest_tls_cert_file => "${ssl_config_dir}/${ssl_graylog_cert_filename}",
-		rest_tls_key_file => "${ssl_config_dir}/${ssl_graylog_key_filename}",
-		rest_tls_key_password => "${tls_cert_pass}",
-		web_enable_tls => true,
-		web_tls_cert_file => "${ssl_config_dir}/${ssl_graylog_cert_filename}",
-		web_tls_key_file => "${ssl_config_dir}/${ssl_graylog_key_filename}",
-		web_tls_key_password => "${tls_cert_pass}"
-		},
+  version => '3.0'
 }
 	#################################################################################################################
 	# Requirements for graylog::server
@@ -136,13 +121,4 @@ class { 'mongodb::server':
 		onlyif => "test -z $(keytool -keystore ${ssl_config_dir}/${graylog_cacert_filename} -storepass ${ssl_graylog_cert_pass} -list | grep graylog-self-signed)",
 		require => [Exec["Create graylog SSL key"], Exec["Copy JAVA cacerts into graylog's directory"]]
 	}
-	$graylog_java_opts = lookup("graylog_java_opts")
-	#Update graylog JAVA_OPTS to use the customized version including the self-signed cert.
-	file_line{ "Update Graylog's JAVA_OPTS":
-		ensure => present,
-		path => "/etc/sysconfig/graylog-server",
-		line => "GRAYLOG_SERVER_JAVA_OPTS=\"${graylog_java_opts} -Djavax.net.ssl.trustStore=${ssl_config_dir}/${graylog_cacert_filename}\"",
-		match => "GRAYLOG_SERVER_JAVA_OPTS*",
-		require => Class["graylog::server"]
-	}
-}  
+
