@@ -2,6 +2,7 @@ class profile::default {
 #  include profile::it::monitoring
 # All telegraf configuration came from Hiera
 include ssh
+include augeas
   Package { ensure => 'installed' }
 
   $enhancers = [ 'tree', 'sssd', 'realmd', 'oddjob', 'oddjob-mkhomedir', 'adcli',
