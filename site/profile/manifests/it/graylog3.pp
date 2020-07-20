@@ -121,4 +121,4 @@ class { 'mongodb::server':
 		onlyif => "test -z $(keytool -keystore ${ssl_config_dir}/${graylog_cacert_filename} -storepass ${ssl_graylog_cert_pass} -list | grep graylog-self-signed)",
 		require => [Exec["Create graylog SSL key"], Exec["Copy JAVA cacerts into graylog's directory"]]
 	}
-
+}
