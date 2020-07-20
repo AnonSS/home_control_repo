@@ -31,7 +31,7 @@ class { 'mongodb::server':
     }
  }
  class { 'graylog::repository':
-  version => '3.0'
+  version => '3.0',
 	config => {
 		password_secret => lookup("graylog_server_password_secret"),    # Fill in your password secret, must have more than 16 characters
 		root_password_sha2 => lookup("graylog_server_root_password_sha2"), # Fill in your root password hash
