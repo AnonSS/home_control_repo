@@ -44,7 +44,7 @@ class { '::graylog::server':
     allow_leading_wildcard_searches            => true,
     allow_highlighting                         => true,
     http_bind_address                          => '0.0.0.0:9000',
-    http_external_uri                          => 'https://192.168.0.43:9000/',
+    http_external_uri                          => 'https://graylog3.home.vm:9000/',
 #    web_listen_uri                             => 'https://192.168.0.43:9000',
 #    rest_listen_uri                            => 'https://192.168.0.43:9000',
     http_enable_tls                            => true,
@@ -58,7 +58,7 @@ class { '::graylog::server':
     elasticsearch_shards                       => '4',
     elasticsearch_replicas                     => '1',
     elasticsearch_index_prefix                 => 'graylog',
-    elasticsearch_hosts                        => 'http://graylog2.home.vm:9200',
+    elasticsearch_hosts                        => 'http://graylog3.home.vm:9200',
  #   mongodb_uri                                => 'mongodb://mongouser:mongopass@graylog2.home.vm:27017',
   },
 }
