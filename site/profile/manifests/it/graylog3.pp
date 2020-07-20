@@ -30,4 +30,7 @@ class { 'mongodb::server':
    'network.host' => '127.0.0.1',
     }
  }
+ class { 'graylog::repository':
+  version => '3.0'
+}
  }  
