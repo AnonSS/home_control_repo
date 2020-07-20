@@ -58,7 +58,7 @@ class { '::graylog::server':
     elasticsearch_shards                       => '4',
     elasticsearch_replicas                     => '1',
     elasticsearch_index_prefix                 => 'graylog',
-    elasticsearch_hosts                        => 'http://graylog3.home.vm:9200',
+#    elasticsearch_hosts                        => 'http://graylog3.home.vm:9200',
  #   mongodb_uri                                => 'mongodb://mongouser:mongopass@graylog2.home.vm:27017',
   },
 }
