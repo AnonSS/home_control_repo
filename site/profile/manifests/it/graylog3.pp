@@ -33,6 +33,8 @@ class { 'mongodb::server':
  class { 'graylog::repository':
   version => '3.0'
 }
+$tls_password_array = split($ssl_key_passout_phrase, /:/)
+$tls_cert_pass = $tls_password_array[1]
 class { '::graylog::server':
   package_version => '3.0.0-12',
   config  => {
