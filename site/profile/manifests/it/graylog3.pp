@@ -131,10 +131,11 @@ class { '::graylog::server':
   config  => {
     password_secret => lookup("graylog_server_password_secret"),    # Fill in your password secret, must have more than 16 characters
     root_password_sha2 => lookup("graylog_server_root_password_sha2"), # Fill in your root password hash
-    web_listen_uri => "https://0.0.0.0:9000/",
-    rest_listen_uri => "https://${graylog_canonical_name}:9000/api/",
-    web_endpoint_uri => "https://${graylog_canonical_name}:9000/api/",
+#    web_listen_uri => "https://0.0.0.0:9000/",
+#    rest_listen_uri => "https://${graylog_canonical_name}:9000/api/",
+#    web_endpoint_uri => "https://${graylog_canonical_name}:9000/api/",
     http_bind_address => "0.0.0.0:9000",
+    http_external_uri => "https://${graylog_canonical_name}:9000/",
     rest_enable_tls => true,
     rest_tls_cert_file => "${ssl_config_dir}/${ssl_graylog_cert_filename}",
     rest_tls_key_file => "${ssl_config_dir}/${ssl_graylog_key_filename}",
