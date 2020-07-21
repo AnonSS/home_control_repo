@@ -1,4 +1,4 @@
 ---
 classes:
   - "profile::default"
-#  - "profile::it::grafana" 
+  - "profile::it::grafana" 
