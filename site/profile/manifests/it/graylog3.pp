@@ -84,8 +84,8 @@ class { 'mongodb::server':
 	
 	# Convert PKCS5 into PKCS8 encrypted
 	
-	$ssl_pkcs8_encrypted_filename = "pkcs8-encrypted.pem"
-	$ssl_pkcs8_passout_phrase = lookup("ssl_passout_phrase")
+	$ssl_pkcs8_encrypted_filename = 'pkcs8-encrypted.pem'
+	$ssl_pkcs8_passout_phrase = lookup('ssl_passout_phrase')
 	
 	
 	exec{ "Convert pkcs5 to pkcs8 encrypted" :
