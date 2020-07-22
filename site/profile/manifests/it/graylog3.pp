@@ -10,8 +10,8 @@ class {'mongodb::globals':
 class { 'mongodb::server':
   bind_ip => ['127.0.0.1'],
  }
- 	$xms = lookup("elasticsearch_xms")
-	$xmx = lookup("elasticsearch_xmx")
+ 	$xms = lookup('elasticsearch_xms')
+	$xmx = lookup('elasticsearch_xmx')
 
 	class { 'elastic_stack::repo':
 		version => 6,
