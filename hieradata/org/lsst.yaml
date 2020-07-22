@@ -28,7 +28,7 @@ ssh::server_options:
   TCPKeepAlive: "yes"
   ClientAliveInterval: 0
   ClientAliveCountMax: 3
-  UseDNS: "yes"
+  UseDNS: "no"
   PermitTunnel: "no"
   Banner: "none"
 #   XAuthLocation: "/usr/bin/xauth"
