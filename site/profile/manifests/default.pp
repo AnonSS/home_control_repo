@@ -3,7 +3,7 @@ class profile::default {
 # All telegraf configuration came from Hiera
 
 include ssh
-#include accounts
+include accounts
 
   Package { ensure => 'installed' }
 
