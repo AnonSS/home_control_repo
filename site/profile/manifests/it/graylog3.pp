@@ -134,7 +134,7 @@ class { '::graylog::server':
     web_listen_uri => "https://${graylog_canonical_name}:9000/",
     rest_listen_uri => "https://${graylog_canonical_name}:9000/api/",
     web_endpoint_uri => "https://${graylog_canonical_name}:9000/api/",
-    http_bind_address => "127.0.0.1:9000",
+    http_bind_address => "0.0.0.1:9000",
     graylog_http_external_uri => "https://${graylog_canonical_name}:9000/",
     rest_enable_tls => true,
     rest_tls_cert_file => "${ssl_config_dir}/${ssl_graylog_cert_filename}",
