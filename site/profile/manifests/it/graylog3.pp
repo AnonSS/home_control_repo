@@ -78,8 +78,8 @@ $ssl_keyout_filename = 'pkcs5-plain.pem'
 $ssl_graylog_cert_filename = 'graylog-certificate.pem'
 exec{ 'Create SSL certificate':
     path    => [ '/usr/bin', '/bin', '/usr/sbin' ],
-    command => "openssl req -x509 -days ${certificate_duration} -nodes -newkey ${ssl_key_algorithm} 
-    -config ${ssl_config_dir}/${ssl_config_filename} -keyout ${ssl_config_dir}/${ssl_keyout_filename} 
+    command => "openssl req -x509 -days ${certificate_duration} -nodes -newkey ${ssl_key_algorithm} \
+    -config ${ssl_config_dir}/${ssl_config_filename} -keyout ${ssl_config_dir}/${ssl_keyout_filename} \
     -out ${ssl_config_dir}/${ssl_graylog_cert_filename}",
     onlyif  => 'test ! -f /etc/graylog/server/graylog-certificate.pem',
     require => [File["${ssl_config_dir}/${ssl_config_filename}"]]
