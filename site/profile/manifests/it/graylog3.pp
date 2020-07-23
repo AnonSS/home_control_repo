@@ -151,7 +151,7 @@ class { '::graylog::server':
     web_enable_tls => true,
     web_tls_cert_file => "${ssl_config_dir}/${ssl_graylog_cert_filename}",
     web_tls_key_file => "${ssl_config_dir}/${ssl_graylog_key_filename}",
-    web_tls_key_password => ${tls_cert_pass
+    web_tls_key_password => $tls_cert_pass,
 #    elasticsearch_hosts                        => 'http://graylog3.home.vm:9200',
  #   mongodb_uri                                => 'mongodb://mongouser:mongopass@graylog2.home.vm:27017',
   },
