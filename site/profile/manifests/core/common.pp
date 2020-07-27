@@ -24,11 +24,11 @@ class profile::core::common(
   include easy_ipa
   include augeas
   include rsyslog
-  include rsyslog::config
-  include profile::core::hardware
-  include profile::core::dielibwrapdie
+#  include rsyslog::config
+#  include profile::core::hardware
+#  include profile::core::dielibwrapdie
 
-  if $collect_metrics {
-    include profile::core::telegraf
-  }
+#  if $collect_metrics {
+#    include profile::core::telegraf
+#  }
 }
